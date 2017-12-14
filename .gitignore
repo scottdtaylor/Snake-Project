@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/Snake Project/v14/.suo
+/Snake Project/Snake Project.vcxproj
+/Snake Project/Snake Project.vcxproj.filters
+/Snake Project.VC.db
+/Snake Project.VC.VC.opendb
