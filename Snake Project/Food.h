@@ -4,7 +4,14 @@
 
 class Food {
 public:
+	Food();
+	virtual ~Food();
+	Food(const Food& f);
+	Food& operator=(Food f);
 
+private:
+	int foodx;
+	int foody;
 
 
 };
