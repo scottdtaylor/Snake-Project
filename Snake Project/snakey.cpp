@@ -27,6 +27,8 @@ Snakey::Snakey() {
 	snake.push_back('o');
 	snake.push_back('o');
 	going = STOPPED;
+	lastpos.first = 0;
+	lastpos.second = 0;
 }
 
 Snakey::Snakey(const Snakey& s) {

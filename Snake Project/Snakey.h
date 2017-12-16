@@ -13,6 +13,7 @@ private:
 	
 	std::vector<std::pair<int, int>> spos;
 	std::vector<char> snake;
+	std::pair<int, int> lastpos;
 	sdirection going;
 
 

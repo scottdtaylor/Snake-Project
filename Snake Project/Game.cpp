@@ -54,7 +54,7 @@ void Game::drawboard() {
 		std::cout << std::endl;
 	
 	}
-	
+	std::cout << "Score: " << score;
 
 }
 
@@ -84,7 +84,7 @@ void Game::movesnake() {
 		}
 	}
 	if (snake.going != STOPPED) {
-
+		snake.lastpos = snake.spos[snake.spos.size() - 1];
 		for (int i = snake.spos.size() - 1; i > 0 ; i--) {
 			snake.spos[i] = snake.spos[i - 1];
 			
@@ -109,7 +109,15 @@ void Game::movesnake() {
 		}
 		
 }
-	
+void Game::collisions() {
+	if(snake.spos[0].first == food.foodx && snake.spos[0].second == food.foody){
+		score += 1;
+		food = Food();
+		snake.snake.push_back('o');
+		snake.spos.push_back(snake.lastpos);
+
+	}
+}
 
 bool Game::getstatus() {
 	return gameon;

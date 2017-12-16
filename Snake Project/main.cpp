@@ -17,6 +17,8 @@ int main() {
 		system("CLS");
 		game.drawboard();
 		game.movesnake();
+		game.collisions();
+		
 		
 	}
 	system("PAUSE");
