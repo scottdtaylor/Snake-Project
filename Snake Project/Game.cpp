@@ -34,7 +34,7 @@ void Game::drawboard() {
 				std::cout << food.toeat;
 			else{
 				for (int k = 0; k < snake.spos.size(); k++) {
-					if (snake.spos[k].first == j && snake.spos[k].second == i && snake.going != RIGHT) {
+					if (snake.spos[k].first == j && snake.spos[k].second == i && snake.going != RIGHT) { //check for a triple class, use that and sort lol
 						std::cout << snake.snake[k];
 						j++;
 					}
