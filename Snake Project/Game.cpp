@@ -1,6 +1,6 @@
 #include "Game.h"
 #include<iostream>
-
+#include <conio.h>
 
 Game::Game() {
 	snake = Snakey();
@@ -49,7 +49,35 @@ void Game::drawboard() {
 }
 
 void Game::update() {
-	if
+	if (_kbhit()) {
+		switch (_getch()) {
+		case 'w': 
+			snake.going = UP;
+			break;
+		case 'a':
+			snake.going = LEFT;
+			break;
+		case 's':
+			snake.going = DOWN;
+			break;
+		case 'd':
+			snake.going = RIGHT;
+			break;
+		}
+	}
+	switch (snake.going) {
+	case UP:
+		snake.spos[0].second++;
+		break;
+	case LEFT:
+		snake.spos[0].first--;
+		break;
+	case DOWN:
+		snake.spos[0].second--;
+		break;
+	case RIGHT:
+		snake.spos[0].first
+	}
 }
 bool Game::getstatus() {
 	return gameon;
