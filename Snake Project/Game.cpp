@@ -1,6 +1,7 @@
 #include "Game.h"
 #include<iostream>
 
+
 Game::Game() {
 	snake = Snakey();
 	food = Food();
@@ -48,7 +49,7 @@ void Game::drawboard() {
 }
 
 void Game::update() {
-
+	if
 }
 bool Game::getstatus() {
 	return gameon;

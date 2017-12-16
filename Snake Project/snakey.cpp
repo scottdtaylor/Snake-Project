@@ -1,17 +1,27 @@
 #include "Snakey.h"
 #include "Game.h"
 
+class SnakeSetup {
+public:
+	SnakeSetup() {}
+	template <typename positions>
+	void operator()(std::vector<std::pair<positions, positions>>& spos) {
+		spos.resize(4);
+		spos[0].first = Game::width / 2;
+		spos[0].second = Game::height / 2;
+		spos[1].first = spos[0].first;
+		spos[1].second = spos[0].second + 1;
+		spos[2].first = spos[1].first;
+		spos[2].second = spos[1].second + 1;
+		spos[2].first = spos[1].first;
+		spos[2].second = spos[1].second + 1;
+		return;
+	}
+}s;
+
 Snakey::Snakey() {
 	snake = std::vector<char>();
-	spos.resize(4);
-	spos[0].first = Game::width / 2;
-	spos[0].second = Game::height / 2;
-	spos[1].first = spos[0].first;
-	spos[1].second = spos[0].second + 1;
-	spos[2].first = spos[1].first;
-	spos[2].second = spos[1].second + 1;
-	spos[2].first = spos[1].first;
-	spos[2].second = spos[1].second + 1;
+	s(spos);
 	snake.push_back('@');
 	snake.push_back('o');
 	snake.push_back('o');

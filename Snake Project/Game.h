@@ -23,8 +23,8 @@ public:
 	void update();
 	bool getstatus();
 
-	static const int width = 26;
-	static const int height = 15;
+	static const int width = 40;
+	static const int height = 20;
 
 
 

@@ -6,13 +6,16 @@
 #include<chrono>
 
 
+
+
+
 int main() {
 	Game game;
 	
 	while (game.getstatus()) {
 		system("CLS");
 		game.drawboard();
-		_sleep(100);
+		_sleep(0);
 	}
 	system("PAUSE");
 	return 0;

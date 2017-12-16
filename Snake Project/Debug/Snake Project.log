@@ -1,4 +1,5 @@
-﻿  Game.cpp
-c:\users\scott\onedrive\documents\visual studio 2015\projects\snake project\snake project\game.cpp(32): warning C4018: '<': signed/unsigned mismatch
+﻿  main.cpp
+c:\users\scott\onedrive\documents\visual studio 2015\projects\snake project\snake project\main.cpp(18): warning C4996: '_sleep': This function or variable has been superceded by newer library or operating system functionality. Consider using Sleep instead. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdlib.h(1266): note: see declaration of '_sleep'
   Snake Project.vcxproj -> C:\Users\scott\onedrive\documents\visual studio 2015\Projects\Snake Project\Debug\Snake Project.exe
   Snake Project.vcxproj -> C:\Users\scott\onedrive\documents\visual studio 2015\Projects\Snake Project\Debug\Snake Project.pdb (Full PDB)
