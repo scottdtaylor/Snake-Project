@@ -16,7 +16,8 @@ int main() {
 	while (game.getstatus()) {
 		system("CLS");
 		game.drawboard();
-		_sleep(0);
+		game.update();
+		_sleep(10);
 	}
 	system("PAUSE");
 	return 0;

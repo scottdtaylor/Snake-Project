@@ -1,6 +1,9 @@
 #include "Game.h"
 #include<iostream>
 #include <conio.h>
+#include <algorithm>
+#include<numeric>
+#include<utility>
 
 Game::Game() {
 	snake = Snakey();
@@ -51,34 +54,60 @@ void Game::drawboard() {
 void Game::update() {
 	if (_kbhit()) {
 		switch (_getch()) {
-		case 'w': 
+		case 'w':
+			if (snake.going == DOWN)
+				break;
 			snake.going = UP;
 			break;
 		case 'a':
+			if (snake.going == RIGHT)
+				break;
 			snake.going = LEFT;
 			break;
 		case 's':
+			if (snake.going == UP)
+				break;
 			snake.going = DOWN;
 			break;
 		case 'd':
+			if (snake.going == LEFT)
+				break;
 			snake.going = RIGHT;
 			break;
 		}
 	}
-	switch (snake.going) {
-	case UP:
-		snake.spos[0].second++;
-		break;
-	case LEFT:
-		snake.spos[0].first--;
-		break;
-	case DOWN:
-		snake.spos[0].second--;
-		break;
-	case RIGHT:
-		snake.spos[0].first
-	}
+		switch (snake.going) {
+		case UP:
+			snake.spos[0].second--;
+			break;
+		case LEFT:
+			snake.spos[0].first--;
+			break;
+		case DOWN:
+			snake.spos[0].second++;
+			break;
+		case RIGHT:
+			snake.spos[0].first++;
+			break;
+		case STOPPED:
+			break;
+
+		}
+		if (snake.going != STOPPED) {
+			std::pair<int, int> temp;
+			std::for_each(snake.spos.begin(), snake.spos.end(), [=](){})
+}
+	
 }
 bool Game::getstatus() {
 	return gameon;
 }
+/*Things to implement:
+std::bind, possibly using a lambda, can use in the update(), if lambda can access members.
+smart pointers
+iterator discussion
+memory management by try catch
+qt implementation
+try doing some inheritance stuff by creating opposite snake
+
+*/

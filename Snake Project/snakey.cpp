@@ -13,8 +13,8 @@ public:
 		spos[1].second = spos[0].second + 1;
 		spos[2].first = spos[1].first;
 		spos[2].second = spos[1].second + 1;
-		spos[2].first = spos[1].first;
-		spos[2].second = spos[1].second + 1;
+		spos[3].first = spos[2].first;
+		spos[3].second = spos[2].second + 1;
 		return;
 	}
 }s;
