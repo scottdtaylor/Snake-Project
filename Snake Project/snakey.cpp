@@ -2,14 +2,16 @@
 #include "Game.h"
 
 Snakey::Snakey() {
-	head.first = Game::width / 2;
-	head.second = Game::height / 2;
-	tail[1].first = head.first;
-	tail[1].second = head.second + 1;
-	tail[2].first = tail[1].first;
-	tail[2].second = tail[1].second + 1;
-	tail[3].first = tail[2].first;
-	tail[3].second = tail[2].second + 1;
+	snake = std::vector<char>();
+	spos.resize(4);
+	spos[0].first = Game::width / 2;
+	spos[0].second = Game::height / 2;
+	spos[1].first = spos[0].first;
+	spos[1].second = spos[0].second + 1;
+	spos[2].first = spos[1].first;
+	spos[2].second = spos[1].second + 1;
+	spos[2].first = spos[1].first;
+	spos[2].second = spos[1].second + 1;
 	snake.push_back('@');
 	snake.push_back('o');
 	snake.push_back('o');
@@ -18,10 +20,9 @@ Snakey::Snakey() {
 }
 
 Snakey::Snakey(const Snakey& s) {
-	this->head = s.head;
-	this->tail.resize(s.tail.size());
-	std::copy(s.tail.begin(), s.tail.end(), this->tail.begin());
-	this->snake.resize((s.snake.size());
+	this->spos.resize(s.spos.size());
+	std::copy(s.spos.begin(), s.spos.end(), this->spos.begin());
+	this->snake.resize(s.snake.size());
 	std::copy(s.snake.begin(), s.snake.end(), this->snake.begin());
 	this->going = s.going;
 }
@@ -31,10 +32,10 @@ Snakey& Snakey::operator=(Snakey s) {
 	return *this;
 }
 void Snakey::swap(Snakey& s) {
-	std::swap(this->head, s.head);
+	
 	std::swap(this->going, s.going);
 	std::swap(this->snake, s.snake);
-	std::swap(this->tail, s.tail);
+	std::swap(this->spos, s.spos);
 }
 Snakey::~Snakey() {
 

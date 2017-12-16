@@ -7,23 +7,24 @@
 class Game {
 private:
 
-	Snakey Snake;
+	Snakey snake;
 	Food food;
-	bool gameover;
+	bool gameon;
 	int score;
 
 
 public:
 	Game();
-	~Game();
+	virtual ~Game();
 	Game(const Game& copy) = delete;
 	Game& operator=(const Game& assigned) = delete;
 	void setup();
 	void drawboard();
-	void end_game();
-	void generate_food();
+	void update();
+	bool getstatus();
+
 	static const int width = 26;
-	static const int height = 26;
+	static const int height = 15;
 
 
 

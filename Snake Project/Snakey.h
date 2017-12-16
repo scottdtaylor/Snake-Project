@@ -8,8 +8,8 @@
 enum sdirection { STOPPED = 0, UP, DOWN, LEFT, RIGHT };
 class Snakey {
 private:
-	std::pair<int, int> head;
-	std::vector<std::pair<int, int>> tail;
+	
+	std::vector<std::pair<int, int>> spos;
 	std::vector<char> snake;
 	sdirection going;
 
@@ -23,7 +23,8 @@ public:
 	bool check_collision();
 	void swap(Snakey& s);
 
-
+	friend class Game;
+	
 
 };
 

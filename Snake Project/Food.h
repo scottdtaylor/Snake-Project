@@ -1,4 +1,4 @@
-
+#include <string>
 #ifndef FOOD_H
 #define FOOD_H
 
@@ -12,7 +12,8 @@ public:
 private:
 	int foodx;
 	int foody;
-
+	char toeat;
+	friend class Game;
 
 };
 
