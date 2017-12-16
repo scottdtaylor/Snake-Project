@@ -8,7 +8,7 @@
 
 
 
-//test
+//testing
 int main() {
 
 	Game game;
