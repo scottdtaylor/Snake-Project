@@ -2,7 +2,7 @@
 #ifndef SNAKEY_H
 #define SNAKEY_H
 
-
+#include "triplet.h"
 #include <vector>
 #include <utility>
 
@@ -11,9 +11,8 @@ enum sdirection { STOPPED = 0, UP, DOWN, LEFT, RIGHT };
 class Snakey {
 private:
 	
-	std::vector<std::pair<int, int>> spos;
-	std::vector<char> snake;
-	std::pair<int, int> lastpos;
+	std::vector<triplet<int,int, char>> spos;
+	triplet <int, int, char> lastpos;
 	sdirection going;
 
 

@@ -4,13 +4,23 @@
 #include <algorithm>
 #include<numeric>
 #include<utility>
+#include"triplet.h"
+
+
+
+
+
+
 
 Game::Game() {
+
 	snake = Snakey();
 	food = Food();
 	gameon = true;
 	score = 0;
 }
+
+
 
 
 //kbhit
@@ -57,6 +67,8 @@ void Game::drawboard() {
 	std::cout << "Score: " << score;
 
 }
+
+
 
 void Game::movesnake() {
 	if (_kbhit()) {
