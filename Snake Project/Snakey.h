@@ -2,8 +2,10 @@
 #ifndef SNAKEY_H
 #define SNAKEY_H
 
+
 #include <vector>
 #include <utility>
+
 
 enum sdirection { STOPPED = 0, UP, DOWN, LEFT, RIGHT };
 class Snakey {
@@ -22,7 +24,6 @@ public:
 	virtual ~Snakey();
 	bool check_collision();
 	void swap(Snakey& s);
-
 	friend class Game;
 	
 

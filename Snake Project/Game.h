@@ -18,13 +18,13 @@ public:
 	virtual ~Game();
 	Game(const Game& copy) = delete;
 	Game& operator=(const Game& assigned) = delete;
-	void setup();
 	void drawboard();
-	void update();
+	void movesnake();
+	void collisions();
 	bool getstatus();
 
-	static const int width = 40;
-	static const int height = 20;
+	static const int width = 30;
+	static const int height = 13;
 
 
 

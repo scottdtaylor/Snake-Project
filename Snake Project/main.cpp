@@ -16,8 +16,8 @@ int main() {
 	while (game.getstatus()) {
 		system("CLS");
 		game.drawboard();
-		game.update();
-		_sleep(10);
+		game.movesnake();
+		
 	}
 	system("PAUSE");
 	return 0;

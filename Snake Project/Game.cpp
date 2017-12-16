@@ -34,10 +34,17 @@ void Game::drawboard() {
 				std::cout << food.toeat;
 			else{
 				for (int k = 0; k < snake.spos.size(); k++) {
-					if (snake.spos[k].first == j && snake.spos[k].second == i) {
+					if (snake.spos[k].first == j && snake.spos[k].second == i && snake.going != RIGHT) {
 						std::cout << snake.snake[k];
 						j++;
 					}
+					for (int k = snake.spos.size() - 1; k > -1; k--) {
+						if (snake.spos[k].first == j && snake.spos[k].second == i && snake.going == RIGHT) {
+							std::cout << snake.snake[k];
+							j++;
+						}
+				}
+					
 					
 									}
 				std::cout << " ";
@@ -51,7 +58,7 @@ void Game::drawboard() {
 
 }
 
-void Game::update() {
+void Game::movesnake() {
 	if (_kbhit()) {
 		switch (_getch()) {
 		case 'w':
@@ -76,6 +83,13 @@ void Game::update() {
 			break;
 		}
 	}
+	if (snake.going != STOPPED) {
+
+		for (int i = snake.spos.size() - 1; i > 0 ; i--) {
+			snake.spos[i] = snake.spos[i - 1];
+			
+		}
+	}
 		switch (snake.going) {
 		case UP:
 			snake.spos[0].second--;
@@ -93,12 +107,10 @@ void Game::update() {
 			break;
 
 		}
-		if (snake.going != STOPPED) {
-			std::pair<int, int> temp;
-			std::for_each(snake.spos.begin(), snake.spos.end(), [=](){})
+		
 }
 	
-}
+
 bool Game::getstatus() {
 	return gameon;
 }

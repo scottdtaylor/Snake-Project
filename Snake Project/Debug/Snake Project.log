@@ -1,6 +1,9 @@
-﻿  snakey.cpp
-  Game.cpp
-c:\users\scott\onedrive\documents\visual studio 2015\projects\snake project\snake project\game.cpp(33): warning C4018: '<': signed/unsigned mismatch
+﻿  Game.cpp
+c:\users\scott\onedrive\documents\visual studio 2015\projects\snake project\snake project\game.cpp(36): warning C4018: '<': signed/unsigned mismatch
   Generating Code...
+  Skipping... (no relevant changes detected)
+  snakey.cpp
+  main.cpp
+  Food.cpp
   Snake Project.vcxproj -> C:\Users\scott\onedrive\documents\visual studio 2015\Projects\Snake Project\Debug\Snake Project.exe
   Snake Project.vcxproj -> C:\Users\scott\onedrive\documents\visual studio 2015\Projects\Snake Project\Debug\Snake Project.pdb (Full PDB)
