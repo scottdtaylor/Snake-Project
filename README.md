@@ -50,3 +50,7 @@ algorithms it can definitely save time, especially for larger vectors/many vecto
 ----------
 ## Test Cases and Problems
 ----------
+
+
+-------
+Note: Will add most files to gitignore (ie. the .exe file, debug, etc.) but want to finish project first.
