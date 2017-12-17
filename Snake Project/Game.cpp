@@ -7,7 +7,18 @@
 #include"triplet.h"
 
 
+class snakesort {
+public:
+	snakesort() {
 
+	}
+	bool operator()(triplet<int, int, char> a, triplet<int, int, char> b, sdirection d) {
+		switch (d) {
+
+		}
+	}
+
+}ssort;
 
 
 
@@ -30,6 +41,14 @@ Game::~Game() {
 }
 
 void Game::drawboard() {
+	sdirection whereto = snake.wheregoing();
+	std::vector<triplet<int, int, char>> copy = snake.spos;
+	std::sort(copy.begin(), copy.end(), [&](triplet<int, int, char> a, triplet<int, int, char> b)
+	{switch (whereto) { case UP: ssort(a, b, UP); break; case LEFT: ssort(a, b, LEFT); break; case DOWN: ssort(a, b, DOWN); break; case RIGHT: ssort(a, b, RIGHT); break; case STOPPED: ssort(a, b, STOPPED); }});
+	for (int l = 0; l < snake.spos.size(); l++) {
+		std::cout << snake.spos[l].first << ',' << snake.spos[l].second << "  ";
+	}
+	std::cout << '\n';
 	std::cout << "  ";
 	for (int i = 0; i < width - 1; i++)
 		std::cout << "_";
@@ -43,17 +62,12 @@ void Game::drawboard() {
 			else if (i == food.foody && j == food.foodx)
 				std::cout << food.toeat;
 			else{
-				for (int k = 0; k < snake.spos.size(); k++) {
-					if (snake.spos[k].first == j && snake.spos[k].second == i && snake.going != RIGHT) { //check for a triple class, use that and sort lol
-						std::cout << snake.snake[k];
+
+				for (int k = 0; k < copy.size(); k++) {
+					if (copy[k].first == j && copy[k].second == i) {
+						std::cout << copy[k].third;
 						j++;
 					}
-					for (int k = snake.spos.size() - 1; k > -1; k--) {
-						if (snake.spos[k].first == j && snake.spos[k].second == i && snake.going == RIGHT) {
-							std::cout << snake.snake[k];
-							j++;
-						}
-				}
 					
 					
 									}
@@ -125,7 +139,6 @@ void Game::collisions() {
 	if(snake.spos[0].first == food.foodx && snake.spos[0].second == food.foody){
 		score += 1;
 		food = Food();
-		snake.snake.push_back('o');
 		snake.spos.push_back(snake.lastpos);
 
 	}

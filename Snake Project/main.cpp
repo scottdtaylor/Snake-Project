@@ -20,7 +20,7 @@ int main() {
 		game.drawboard();
 		game.movesnake();
 		game.collisions();
-		
+		_sleep(50);
 		
 	}
 	system("PAUSE");

@@ -22,6 +22,8 @@ public:
 	Snakey(const Snakey& s);
 	Snakey& operator=(Snakey s);
 	virtual ~Snakey();
+	
+	sdirection wheregoing();
 	bool check_collision();
 	void swap(Snakey& s);
 	friend class Game;

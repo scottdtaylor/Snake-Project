@@ -12,7 +12,10 @@ public:
 	triplet() : first(T()), second(S()), third(R()) {
 
 	}
-	triplet(T& one, S& two, R&three) : first(one), second(two), third(three) {
+	triplet(T one, S two, const R three) : first(one), second(two), third(three) {
+
+	}
+	triplet(const R& three) : third(three) {
 
 	}
 	triplet(const triplet& trip) {
@@ -23,8 +26,11 @@ public:
 	triplet& operator=(triplet trip) {
 		std::swap(first, trip.first);
 		std::swap(second, trip.second);
-		std::swap(third, trip.third);
 		return *this;
+	}
+	bool operator<(const triplet& t) {
+	switch()
+		
 	}
 };
 

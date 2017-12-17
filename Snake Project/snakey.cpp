@@ -17,12 +17,16 @@ public:
 		spos[3].first = spos[2].first;
 		spos[3].second = spos[2].second + 1;
 		spos[0].third = '@';
-		for (int i = 1; i < spos.size(), i++) {
+		for (int i = 1; i < spos.size(); i++) {
 			spos[i].third = 'o';
 		}
 		return;
 	}
 }s;
+
+sdirection Snakey::wheregoing() {
+	return going;
+}
 
 Snakey::Snakey() {
 	
@@ -36,10 +40,10 @@ Snakey::Snakey() {
 Snakey::Snakey(const Snakey& s) {
 	this->spos.resize(s.spos.size());
 	std::copy(s.spos.begin(), s.spos.end(), this->spos.begin());
-	this->snake.resize(s.snake.size());
-	std::copy(s.snake.begin(), s.snake.end(), this->snake.begin());
 	this->going = s.going;
+	this->lastpos = s.lastpos;
 }
+
 
 Snakey& Snakey::operator=(Snakey s) {
 	swap(s);
@@ -48,7 +52,6 @@ Snakey& Snakey::operator=(Snakey s) {
 void Snakey::swap(Snakey& s) {
 	
 	std::swap(this->going, s.going);
-	std::swap(this->snake, s.snake);
 	std::swap(this->spos, s.spos);
 }
 Snakey::~Snakey() {
