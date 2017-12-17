@@ -2,7 +2,7 @@
 #ifndef TRIPLET_H
 #define TRIPLET_H
 
-
+//trying something
 template <typename T, typename S, typename R, typename Q>
 class quad {
 public:
