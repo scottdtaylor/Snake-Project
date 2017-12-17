@@ -22,7 +22,7 @@ public:
 	Snakey(const Snakey& s);
 	Snakey& operator=(Snakey s);
 	virtual ~Snakey();
-	bool check_collision(std::vector<quad<int,int,char,sdirection>> v);
+	bool check_collision(std::vector<quad<int, int, char, sdirection>>::iterator begin, std::vector<quad<int, int, char, sdirection>>::iterator end);
 	void swap(Snakey& s);
 	friend class Game;
 	

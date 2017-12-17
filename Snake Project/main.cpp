@@ -23,7 +23,7 @@ int main() {
 		_sleep(50);
 		
 	}
-	std::cout << '\n' << "You lose :(   Your score is: " << game.getscore() << std::endl;
+	std::cout << '\n' << "GAME OVER. Your score is: " << game.getscore() << std::endl;
 	system("PAUSE");
 	return 0;
 }

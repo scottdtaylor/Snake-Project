@@ -52,9 +52,9 @@ void Snakey::swap(Snakey& s) {
 	std::swap(lastpos, s.lastpos);
 	std::swap(this->spos, s.spos);
 }
-bool Snakey::check_collision(std::vector<quad<int, int, char, sdirection>> v) {
-	for (int i = 1; i < v.size(); i++) {
-		if (v[0].first == v[i].first && v[0].second == v[i].second)
+bool Snakey::check_collision(std::vector<quad<int, int, char, sdirection>>::iterator begin, std::vector<quad<int, int, char, sdirection>>::iterator end) {
+	for (auto i = begin+1; i != end; i++) {
+		if (begin->first == i->first && begin->second == i->second)
 			return true;
 	}
 	return false;

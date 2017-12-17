@@ -139,7 +139,7 @@ void Game::collisions() {
 	else if (snake.spos[0].first == 0 || snake.spos[0].first == width || snake.spos[0].second == -1 || snake.spos[0].second == height ) {
 		gameon = false;
 	}
-	else if (snake.check_collision(snake.spos)) {
+	else if (snake.check_collision(snake.spos.begin(), snake.spos.end())) {
 		gameon = false;
 	}
 }
