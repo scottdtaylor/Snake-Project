@@ -23,10 +23,7 @@ Simply download the files given and run, preferably through an IDE as I don't ha
 
 ## Use of class material
 --------
-So far, the project uses git functionality, including branching and merging, commits, and remote repositories. If I get to it, it will also
-incorporate Qt. As for other sections, I will go into those below. Another important note is that while I realize most of these are not 
-being used in an efficient manner. However, I wanted to display what I've learned and where it can be applied rather than trying to find
-the perfect instance for each topic.
+So far, the project uses git functionality, including branching and merging, commits, and remote repositories. If I get to it, it will also incorporate Qt. As for other sections, I will go into those below. Another important note is that while I realize most of these are not being used in an efficient manner. However, I wanted to display what I've learned and where it can be applied rather than trying to find the perfect instance for each topic.
 
 ### Inheritance and Polymorphism
 Although my destructors currently do nothing, I made them virtual. This could, in theory, allow someone to inherit from the snake class
@@ -45,9 +42,11 @@ goes wrong and the stack unwinds, all memory is dealt with properly. It also all
 
 ### Templates
 I also used templates in my SnakeSetup functor, mostly to show that I know how to use them. Since I'm the one writing and using my code, there hasn't really been a need for me to set policy or create many template functions/classes. In this case I suppose there is a chance for storage of other types in the snake class, so a template could be useful.
+Later on, I used templates to create a variation on the pair class. I thought about inheriting from it but decided to write my own instead. 
 
 ### Smart Pointers
 As I have no heap memory yet, I haven't added any smart pointer functionality. 
+
 ### Iterators
 When using std::copy, I needed vector iterators to copy over the contents. While vector iterators are random access, in the case of copy
 they only need to be input/output level, as all operations involve a simple read through of the vectors. There is no decrementing and 
@@ -58,6 +57,7 @@ Since I'm using mostly standard containers, there is no real need to implement m
 ### Generic Algorithms, Lambdas, and Bind
 I used std::copy in my copy constructor for certain vectors. While this doesn't really take advantage of the full use of generic 
 algorithms it can definitely save time, especially for larger vectors/many vectors.
+I attempted to use a lambda function at one point for sorting, but due to issues with the way the sort worked, it ultimately failed. However, if it had worked I would have been able to save a lot of effort due to the capture functionality of the lambda.
 
 ----------
 ## Test Cases and Problems
