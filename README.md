@@ -11,6 +11,7 @@ possible.
 
 Unfortunately, during a switch between the master and experimental branches, I somehow lost the .sln file on my local machine. I thus have been trying to find a way to clone these files into a new solution, but haven't had much luck yet.
 
+It took a long time of moving files around and attempting to clone, but it appears I have solved the issue.  
 
 The use of the project is simple:
 
@@ -64,6 +65,7 @@ algorithms it can definitely save time, especially for larger vectors/many vecto
 There have definitely been some problems, mainly with drawing the game board. The most interesting problem so far has been getting the snake to print correctly when moving. The reason for this is that, due to the way I wrote the print section for the snake, it printed incorrectly when traveling right, or when going right on a sharp 180 turn. Because I have to account for the added snake pieces while drawing the board, I increase the counter for width, but this can result in skipping of other parts. A solution was to sort the positions by width to solve the skipping.
 Other interesting problems have been implementing unfamiliar parts such as clearing and redrawing the game board and taking user keyboard input. I had to do my own research for some of these, and it's interesting to see how much other functionality there is to C++.
 I'm still looking for a way to fix the problem of the screen flicker due to the redrawing, although perhaps this has more to do with the size of the game board or complexity of the program. As a video game player myself, it has definitely made me quite curious as to how professional devs do what they do, especially in terms of graphics. If my computer has trouble perfectly rendering a simple console snake game, I can't imagine how the graphically intense images of modern games are rendered and redrawn/altered. That's probably the coolest insight I've had so far.
+  Another massive problem was git, surprisingly. In trying to retroactively ignore files and remove them from the repo as suggested in the syllabus, the removal from git simultaneously removed them from my local filesystem. This meant that, when I removed the solution file, I could not longer open the project or edit it. Furthermore, this occured when switching branches a while after merging, which meant that, for a reason I don't know, I could not simply revert the commit and regain the file. Eventually, after a few hours of trying, I managed to clone the github repo into a new solution and that worked. Trying to ignore files was one of the larger issues I faced, and it definitely showed a downside of git when used with visual studio.
 
 -------
-Note: Will add most files to gitignore (ie. the .exe file, debug, etc.) but want to finish project first.
+
