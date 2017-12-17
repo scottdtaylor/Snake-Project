@@ -3,33 +3,37 @@
 #define TRIPLET_H
 
 
-template <typename T, typename S, typename R>
-class triplet {
+template <typename T, typename S, typename R, typename Q>
+class quad {
 public:
 	T first;
 	S second;
 	R third;
-	triplet() : first(T()), second(S()), third(R()) {
+	Q fourth;
+	quad() : first(T()), second(S()), third(R()), fourth(STOPPED) {
 
 	}
-	triplet(T one, S two, const R three) : first(one), second(two), third(three) {
+	quad(T one, S two, R three, Q four) : first(one), second(two), third(three), fourth(four) {
 
 	}
-	triplet(const R& three) : third(three) {
+	quad(const R& three) : third(three) {
 
 	}
-	triplet(const triplet& trip) {
-		first = trip.first;
-		second = trip.second;
-		third = trip.third;
+
+	quad(const quad& quad) {
+		first = quad.first;
+		second = quad.second;
+		third = quad.third;
+		fourth = quad.fourth
 	}
-	triplet& operator=(triplet trip) {
-		std::swap(first, trip.first);
-		std::swap(second, trip.second);
+	quad& operator=(quad quad) {
+		std::swap(first, quad.first);
+		std::swap(second, quad.second);
+
 		return *this;
 	}
-	bool operator<(const triplet& t) {
-	switch()
+	bool operator<(const quad& t) {
+	
 		
 	}
 };
