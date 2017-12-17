@@ -6,7 +6,7 @@ class SnakeSetup {
 public:
 	SnakeSetup() {}
 	
-	void operator()(std::vector<triplet<int, int, char>>& spos) {
+	void operator()(std::vector<quad<int, int, char, sdirection>>& spos) {
 		spos.resize(4);
 		spos[0].first = Game::width / 2;
 		spos[0].second = Game::height / 2;
@@ -19,28 +19,27 @@ public:
 		spos[0].third = '@';
 		for (int i = 1; i < spos.size(); i++) {
 			spos[i].third = 'o';
+			spos[i-1].fourth = UP;
 		}
+		spos[spos.size() - 1].fourth = UP;
 		return;
 	}
 }s;
 
-sdirection Snakey::wheregoing() {
-	return going;
-}
+
 
 Snakey::Snakey() {
 	
 	s(spos);
-	going = STOPPED;
 	lastpos.first = 0;
 	lastpos.second = 0;
 	lastpos.third = 'o';
+	
 }
 
 Snakey::Snakey(const Snakey& s) {
 	this->spos.resize(s.spos.size());
 	std::copy(s.spos.begin(), s.spos.end(), this->spos.begin());
-	this->going = s.going;
 	this->lastpos = s.lastpos;
 }
 
@@ -50,9 +49,15 @@ Snakey& Snakey::operator=(Snakey s) {
 	return *this;
 }
 void Snakey::swap(Snakey& s) {
-	
-	std::swap(this->going, s.going);
+	std::swap(lastpos, s.lastpos);
 	std::swap(this->spos, s.spos);
+}
+bool Snakey::check_collision(std::vector<quad<int, int, char, sdirection>> v) {
+	for (int i = 1; i < v.size(); i++) {
+		if (v[0].first == v[i].first && v[0].second == v[i].second)
+			return true;
+	}
+	return false;
 }
 Snakey::~Snakey() {
 

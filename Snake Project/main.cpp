@@ -20,9 +20,10 @@ int main() {
 		game.drawboard();
 		game.movesnake();
 		game.collisions();
-		_sleep(500);
+		_sleep(50);
 		
 	}
+	std::cout << '\n' << "You lose :(   Your score is: " << game.getscore() << std::endl;
 	system("PAUSE");
 	return 0;
 }

@@ -24,18 +24,16 @@ public:
 		first = quad.first;
 		second = quad.second;
 		third = quad.third;
-		fourth = quad.fourth
+		fourth = quad.fourth;
 	}
 	quad& operator=(quad quad) {
 		std::swap(first, quad.first);
 		std::swap(second, quad.second);
-
+		std::swap(third, quad.third);
+		std::swap(fourth, quad.fourth);
 		return *this;
 	}
-	bool operator<(const quad& t) {
-	
-		
-	}
+
 };
 
 

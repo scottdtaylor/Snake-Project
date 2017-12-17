@@ -2,7 +2,7 @@
 #ifndef SNAKEY_H
 #define SNAKEY_H
 
-#include "triplet.h"
+#include "quad.h"
 #include <vector>
 #include <utility>
 
@@ -11,9 +11,9 @@ enum sdirection { STOPPED = 0, UP, DOWN, LEFT, RIGHT };
 class Snakey {
 private:
 	
-	std::vector<triplet<int,int, char>> spos;
-	triplet <int, int, char> lastpos;
-	sdirection going;
+	std::vector<quad<int,int, char, sdirection>> spos;
+	quad <int, int, char, sdirection> lastpos;
+	
 
 
 
@@ -22,9 +22,7 @@ public:
 	Snakey(const Snakey& s);
 	Snakey& operator=(Snakey s);
 	virtual ~Snakey();
-	
-	sdirection wheregoing();
-	bool check_collision();
+	bool check_collision(std::vector<quad<int,int,char,sdirection>> v);
 	void swap(Snakey& s);
 	friend class Game;
 	

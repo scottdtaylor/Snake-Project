@@ -22,9 +22,10 @@ public:
 	void movesnake();
 	void collisions();
 	bool getstatus();
+	int getscore();
 
-	static const int width = 30;
-	static const int height = 13;
+	static const int width = 33;
+	static const int height = 14;
 
 
 
