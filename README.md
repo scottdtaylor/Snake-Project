@@ -9,6 +9,9 @@ and the snake/food will be simple characters in the console version, although ho
 resources. This will allow me to test the logic of my code as well as some Qt implementation practices. I will attempt to use the ui if
 possible.
 
+Unfortunately, during a switch between the master and experimental branches, I somehow lost the .sln file on my local machine. I thus have been trying to find a way to clone these files into a new solution, but haven't had much luck yet.
+
+
 The use of the project is simple:
 
 Simply download the files given and run, preferably through an IDE as I don't have any knowledge of other platforms.
